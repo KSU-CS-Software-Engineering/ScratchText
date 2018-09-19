@@ -1,4 +1,4 @@
-# ScratchText
+# Scratch Text
 A text version of Scratch 3.0
 
 ## Authors

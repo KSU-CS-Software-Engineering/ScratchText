@@ -1,0 +1,281 @@
+ask about set rotatio block 
+
+(Backdrop) 
+BACKDROP = VAR; 
+(Sprite Definitions) 
+SPRITES = SPRITE {"," SPRITE}; 
+SPRITE = "(", SPRITE_NAME, "),", "(", SPRITE_VARIABLES, "),",
+    "(", SPRITE_LISTS, "),","(", SPRITE_BROADCASTS, "),",
+    "(", SPRITE_BLOCKS, "),","(", SPRITE_COMMENTS, "),",
+    "(", SPRITE_CURR_COSTUME, "),","(", SPRITE_COSTUMES, "),",;
+SPRITE_NAME = VAR; 
+SPRITE_VARIABLES = VAR {", ", VAR}; 
+SPRITE_LISTS = VAR {", ", VAR}; 
+SPRITE_BROADCASTS = VAR {", ", VAR};
+SPRITE_BLOCKS = BLOCK_TYPE {", ", BLOCK_TYPE};
+SPRITE_COMMENTS = = string {", ", string};
+SPRITE_CURR_COSTUME = COSTUME;
+SPRITE_COSTUMES = COSTUME {", ", COSTUME};
+COSTUME = "costume: ", VAR, "; filepath: ", string, "; "; 
+
+(Block Hierarchy) 
+BLOCK_TYPE = 
+MOTION_BLOCK
+| LOOKS_BLOCK
+| SOUND_BLOCK
+| EVENT_BLOCK
+| CONTROL_BLOCK
+| SENSING_BLOCK 
+| OPERATORS_BLOCK
+| MY_BLOCKS
+
+MOTION_BLOCK = 
+MOVE_BLOCK 
+| TURN_CW_BLOCK
+| TURN_CCW_BLOCK
+| GO_TO_VAR_BLOCK 
+| GO_TO_VAL_BLOCK
+| GLIDE_VAR_BLOCK 
+| GLIDE_COORD_BLOCK 
+| POINT_DIRECTION_BLOCK 
+| POINT_VAR_BLOCK 
+| CHANGE_X_BLOCK 
+| SET_X_BLOCK 
+| CHANGE_Y_BLOCK 
+| SET_Y_BLOCK 
+| BOUNCE_EDGE_BLOCK
+| SET_ROTATION_BLOCK
+
+LOOKS_BLOCK = 
+SAY_FOR_BLOCK
+| SAY_BLOCK
+| THINK_FOR_BLOCK
+| THINK_BLOCK
+| SWITCH_COSTUME_BLOCK
+| NEXT_COSTUME_BLOCK
+| SWITCH_BACKDROP_BLOCK
+| NEXT_BACKDROP_BLOCK
+| CHANGE_SIZE_BLOCK
+| SET_SIZE_BLOCK
+| CHANGE_VAR_BY_BLOCK
+| SET_VAR_TO_BLOCK
+| CLEAR_GRAPHICS_BLOCK
+| SHOW_BLOCK
+| HIDE_BLOCK 
+| GO_TO_LAYER_BLOCK
+| GO_TO_NTH_BLOCK
+
+SOUND_BLOCK =
+PLAY_UNTIL_BLOCK
+| START_SOUND_BLOCK
+| STOP_SOUNDS_BLOCK
+| CHANGE_VAR_BY_BLOCK
+| SET_VAR_BY_BLOCK
+| CLEAR_SOUNDS_BLOCK
+| CHANGE_VOLUME_BLOCK
+| SET_VOLUME_BLOCK
+
+EVENT_BLOCK = 
+GREEN_FLAG_BLOCK
+| KEY_PRESSED_BLOCK
+| SPRITE_CLICKED_BLOCK
+| BACKDROP_SWITCHED_BLOCK
+| WHEN_GREATER_BLOCK
+| WHEN_RECEIVE_BLOCK
+| BROADCAST_MESSAGE_BLOCK
+| BROADCAST_THEN_WAIT_BLOCK
+
+CONTROL_BLOCK = 
+Wait Block 
+| REPEAT_BLOCK
+| FOREVER_BLOCK
+| IF_BLOCK
+| IF_ELSE_BLOCK
+| WAIT_UNTIL_BLOCK 
+| REPEAT_UNTIL_BLOCK 
+| STOP_VAR_BLOCK
+| WHEN_START_CLONE_BLOCK
+| CREATE_CLONE_BLOCK
+| DELETE_CLONE_BLOCK
+
+SENSING_BLOCK =
+TOUCHING_VAR_OPERATOR
+| TOUCHING_COLOR_OPERATOR
+| COLORS_TOUCHING_OPERATOR
+| ASK_WAIT_BLOCK
+| KEY_PRESSED_OPERATOR
+| MOUSE_CLICKED_OPERATOR
+| SET_DRAG_VAR_BLOCK
+| RESET_TIMER_BLOCK
+
+OPERATORS_BLOCK = 
+PLUS_OPERATOR
+| MINUS_OPEATOR 
+| MULTIPLY_OPERATOR 
+| DIVIDE_OPERATOR
+| RANDOM_OPERATOR
+| GREATER_THAN_BLOCK
+| LESS_THAN_OPERATOR 
+| EQUALS_OPERATOR
+| AND_OPERATOR
+| OR_OPERATOR
+| NOT_OPERATOR
+| JOIN_BLOCK
+| LETTER_BLOCK
+| LENGTH_BLOCK
+| CONTAINS_OPERATOR
+| MOD_BLOCK
+| ROUND_BLOCK
+| FUNCTION_BLOCK
+
+MY_BLOCKS = 
+SET_VAR_BLOCK  
+| CHANGE_VAR_BLOCK
+| SHOW_VAR_BLOCK 
+| HIDE_VAR_BLOCK 
+
+(Block Definitions) 
+MOVE_BLOCK = "move ", N_VAL, " steps";
+TURN_CW_BLOCK = "turn clockwise ", N_VAL, " degrees"; 
+TURN_CCW_BLOCK = "turn counter-clockwise ", N_VAL, " degrees";
+GO_TO_VAR_BLOCK = "go to ", VAR;
+GO_TO_VAL_BLOCK = "go to x:", N_VAL, " y:", N_VAL;
+GLIDE_VAR_BLOCK = "glide ", N_VAL, " secs to ", VAR;
+GLIDE_COORD_BLOCK = "glide ", N_VAL, " secs to x: ", N_VAL, " y: ", N_VAL;
+POINT_DIRECTION_BLOCK = "point in direction ", N_VAL; 
+POINT_VAR_BLOCK = "point towards ", VAR; 
+CHANGE_X_BLOCK = "change x by ", N_VAL; 
+SET_X_BLOCK = "set x to ", N_VAL; 
+CHANGE_Y_BLOCK = "change y by ", N_VAL; 
+SET_Y_BLOCK = "set y to ", N_VAL; 
+BOUNCE_EDGE_BLOCK = "if on edge, bounce"; 
+SET_ROTATION_BLOCK = "set rotation style ", ROT_STYLE;  
+
+SAY_FOR_BLOCK = "say ", S_VAL, " for ", N_VAL, " seconds "; 
+SAY_BLOCK = "say ", S_VAL; 
+THINK_FOR_BLOCK = "think ", S_VAL, " for ", N_VAL, " seconds "; 
+THINK_BLOCK = "think ", S_VAL;
+SWITCH_COSTUME_BLOCK = "switch costume to ", COSTUME
+NEXT_COSTUME_BLOCK = "next costume"; 
+SWITCH_BACKDROP_BLOCK = "switch backdrop to ", BACKDROP; 
+NEXT_BACKDROP_BLOCK = "next backdrop"; 
+CHANGE_SIZE_BLOCK = "chance size by ", N_VAL; 
+SET_SIZE_BLOCK = "set size to ", N_VAL;
+CHANGE_VAR_BY_BLOCK = "change ", EFFECT, " effect by ", N_VAL; 
+SET_VAR_TO_BLOCK = "set ", EFFECT, " effect to ", N_VAL; 
+CLEAR_GRAPHICS_BLOCK = "clear graphic effects"; 
+SHOW_BLOCK = "show"; 
+HIDE_BLOCK = "hide"; 
+GO_TO_LAYER_BLOCK = "go to ", LAYER " layer"; 
+GO_TO_NTH_BLOCK = "go ", LAYER_DIRECTION, N_VAL, " layers";
+
+PLAY_UNTIL_BLOCK = "play sound ", VAR, " until done"; 
+START_SOUND_BLOCK = "start sound ", VAR; 
+STOP_SOUNDS_BLOCK = "stop all sounds"; 
+CHANGE_VAR_BY_BLOCK = "change ", SOUND_EFFECT, " effect by ", N_VAL; 
+SET_VAR_BY_BLOCK = "set ", SOUND_EFFECT, " effect to ", N_VAL; 
+CLEAR_SOUNDS_BLOCK = "clear sounds effects"; 
+CHANGE_VOLUME_BLOCK = "change volume by ", N_VAL; 
+SET_VOLUME_BLOCK = "set volume to ", N_VAL; 
+
+GREEN_FLAG_BLOCK = "when green flag clicked";
+KEY_PRESSED_BLOCK = "when ", KEY, " key pressed"; 
+SPRITE_CLICKED_BLOCK = "when this sprite clicked"; 
+BACKDROP_SWITCHED_BLOCK = "when backdrop switches to ", backdrop;
+WHEN_GREATER_BLOCK = "when", loudness, " > ", N_VAL; 
+WHEN_RECEIVE_BLOCK = "when I receive", message; 
+BROADCAST_MESSAGE_BLOCK = "broadcast", message;
+BROADCAST_THEN_WAIT_BLOCK = "broadcast", message, " and wait"; 
+
+WAIT_BLOCK = "wait", N_VAL, "seconds"; 
+REPEAT_BLOCK = "repeat", N_VAL, ;
+FOREVER_BLOCK = "forver\t", {BLOCK_TYPE};
+IF_BLOCK = "if <", OPERATORS_BLOCK, " then";
+IF_ELSE_BLOCK = "if <", OPERATORS_BLOCK, " then\n\t", {BLOCK_TYPE}, "else\n\t";
+WAIT_UNTIL_BLOCK = "wait until ", OPERATORS_BLOCK; 
+REPEAT_UNTIL_BLOCK = "repeat until ", OPERATORS_BLOCK;
+STOP_VAR_BLOCK = "stop ", scripts;
+WHEN_START_CLONE_BLOCK = "when I start as a clone"; 
+CREATE_CLONE_BLOCK = "create clone of ", "myself"; 
+DELETE_CLONE_BLOCK = "delete this clone"; 
+
+TOUCHING_VAR_OPERATOR = "touching ", "mouse-pointer" | "edge", "?";
+TOUCHING_COLOR_OPERATOR = "touching color ", color;
+COLORS_TOUCHING_OPERATOR = "color ", color, " is touching ", color; 
+ASK_WAIT_BLOCK = "ask ", string, " and wait"; 
+KEY_PRESSED_OPERATOR = "key ", KEY, "pressed?"; 
+MOUSE_CLICKED_OPERATOR = "mouse down?";
+SET_DRAG_VAR_BLOCK = "set drag mode ", "draggable " | "not draggable"; 
+RESET_TIMER_BLOCK = "reset timer"; 
+
+PLUS_OPERATOR = N_VAL, " + ", N_VAL; 
+MINUS_OPEATOR = N_VAL, " - ", N_VAL; 
+MULTIPLY_OPERATOR N_VAL, " * ", N_VAL; 
+DIVIDE_OPERATOR = N_VAL, " / ", N_VAL; 
+RANDOM_OPERATOR = "pick random", N_VAL, "to ", N_VAL; 
+GREATER_THAN_BLOCK = N_VAL, " > ", N_VAL; 
+LESS_THAN_OPERATOR = N_VAL, " < ", N_VAL; 
+EQUALS_OPERATOR = N_VAL, " = ", N_VAL; 
+AND_OPERATOR = N_VAL, " and ", N_VAL; 
+OR_OPERATOR = N_VAL, " or ", N_VAL; 
+NOT_OPERATOR = "not ", N_VAL; 
+CONTAINS_OPERATOR = N_VAL, " > ", N_VAL; 
+JOIN_OPERATOR = "join ", S_VAL, S_VAL; 
+LETTER_OPERATOR = "letter ", N_VAL, " of ", S_VAL; 
+LENGTH_OPERATOR = "length of ", S_VAL;
+CONTAINS_OPERATOR = N_VAL, " contains ", N_VAL, "?"; 
+MOD_OPERATOR = N_VAL | S_VAL, " mod ", N_VAL | S_VAL; 
+ROUND_OPERATOR = "round ", N_VAL; 
+FUNCTION_OPERATOR = formula, " of ", N_VAL; 
+
+SET_VAR_BLOCK = " set ", VAR, " to ", N_VAL; 
+CHANGE_VAR_BLOCK = "change ", VAR, " by ", N_VAL; 
+SHOW_VAR_BLOCK = "show variable ", VAR; 
+HIDE_VAR_BLOCK = "hide variable ", VAR; 
+
+(Basic Values)
+BASIC_TYPES = 
+Empty
+| Number
+| Bool 
+| String
+(Fundamental Definitions)
+Empty = "";
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+Bool = "true" | "false";
+operators = " " | "(" | ")" | ",";
+symbol = ?list of symbols?;
+letter = "A" | "B" | "C" | "D" | "E" | "F" | "G"
+       | "H" | "I" | "J" | "K" | "L" | "M" | "N"
+       | "O" | "P" | "Q" | "R" | "S" | "T" | "U"
+       | "V" | "W" | "X" | "Y" | "Z" | "a" | "b"
+       | "c" | "d" | "e" | "f" | "g" | "h" | "i"
+       | "j" | "k" | "l" | "m" | "n" | "o" | "p"
+       | "q" | "r" | "s" | "t" | "u" | "v" | "w"
+       | "x" | "y" | "z" ;
+number = [ "-" ], digit, { digit } ;
+character = letter | digit | symbol | "_" ;
+string = character, [{character}];
+VAR = "[", string, "]";
+N_VAL = number | VAR; 
+S_VAL = string | VAR; 
+ROT_STYLE = "left-right" | "don't rotate" | "all around"; 
+EFFECT = "color" | "fisheye" | "whirl" | "pixelate" | "mosaic" | "brightness" | "ghost"; 
+LAYER = "front" | "back"; 
+LAYER_DIRECTION = "forward" | "backward"; 
+SOUND_EFFECT = "pitch" | "pan left/right"; 
+KEY = digit | letter | "space" | "left arrow" | "right arrow" | "down arrow" | "up arrow" | "any";
+loudness_timer = loudness | timer;
+message = string; 
+scripts = "all" | "this script" | "other scripts in sprice"; 
+color = "#",[letter|digit]{6};
+formula = "abs" | "floor" | "ceiling" | "sqrt" | "sin" | "cos" | "tan" | "asin" | "acos" | "atan" | "ln" | "log" | "e^" | "10^" | ;
+
+When green flag clicked 
+show variable [myvar] 
+if <myvar < 50> then 
+    move 100 steps 
+    if edge bounce 
+    set [myvar] to (myvar+1) 
+else 
+    stop all

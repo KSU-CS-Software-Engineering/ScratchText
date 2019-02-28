@@ -273,7 +273,7 @@ formula = "abs" | "floor" | "ceiling" | "sqrt" | "sin" | "cos" | "tan" | "asin" 
 
 When green flag clicked 
 show variable [myvar] 
-if <myvar < 50> then 
+if <myvar <50>> then 
     move 100 steps 
     if edge bounce 
     set [myvar] to (myvar+1) 

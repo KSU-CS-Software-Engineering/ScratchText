@@ -4,9 +4,13 @@ return {
   
     // /when key (\w+) is pressed/ 
     keywords: [
+      /*Compounded Words*/
+
+      /*Five Wordss*/
+      'when I start as a clone',
       /*Four Words*/
       'if on edge, bounce', 'when green flag clicked', 
-      'when I start as a clone', 'when this sprite clicked',
+      'when this sprite clicked',
       'when backdrop switches to',
       /*Three Words*/
       'clear sound effects', 'switch backdrop to',  
@@ -34,6 +38,60 @@ return {
       'mouse-pointer', 'draggable','pressed?', 'key', 'to', 
       'color', 'and', 'or', 'not', 'join', 'change', 'by',       
       'letter', 'of', 'to', 'contains', 'mod', 'round',
+    ],
+    Motion: [
+      [/^move .+ steps$/, 'Blue'],
+      //turn degrees
+
+    ],
+    Looks: [
+      [
+
+      ]
+    ],
+    Sound: [
+      [
+
+      ]
+    ],
+    Events: [
+      // %\d+
+      // when %1 is clicked
+      [/^when green flag clicked$/, 'Yellow']
+      [/^m$/, 'Yellow']
+      [/^when this sprite clicked$/, 'Yellow']
+      [/^when green flag clicked$/, 'Yellow']
+      [/^when green flag clicked$/, 'Yellow']
+      [/^when green flag clicked$/, 'Yellow']
+      [/^when green flag clicked$/, 'Yellow']
+      [/^when green flag clicked$/, 'Yellow']
+      [/^when green flag clicked$/, 'Yellow']
+
+    ],
+    Control: [
+      [
+
+      ]
+    ],
+    Sensing: [
+      [
+
+      ]
+    ],
+    Operators: [
+      [
+
+      ]
+    ],
+    Variable: [
+      [
+
+      ]
+    ],
+    MyBlocks: [
+      [
+
+      ]
     ],
   
     // typeKeywords: [

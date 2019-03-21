@@ -1,4 +1,5 @@
-return {
+
+var defs = {
     // Set defaultToken to invalid to see what you do not tokenize yet
     // defaultToken: 'invalid',
   
@@ -60,17 +61,10 @@ return {
       [/^when green flag clicked$/, 'Yellow']
       [/^m$/, 'Yellow']
       [/^when this sprite clicked$/, 'Yellow']
-      [/^when green flag clicked$/, 'Yellow']
-      [/^when green flag clicked$/, 'Yellow']
-      [/^when green flag clicked$/, 'Yellow']
-      [/^when green flag clicked$/, 'Yellow']
-      [/^when green flag clicked$/, 'Yellow']
-      [/^when green flag clicked$/, 'Yellow']
 
     ],
     Control: [
       [
-
       ]
     ],
     Sensing: [
@@ -178,4 +172,17 @@ return {
       ]
     }
   };
-  
+
+  Object.Keys(Blockly.Msg).foreach(msg =>{
+    // Example msg: EVENT_WHENFLAGCLICKED
+    //Get the class
+    var className = msg.split("_")[0].toLowerCase();
+    var value = Blockly.Msg[msg];
+    //Conver value to RegExp when %1 clicked => ^when (it?)clicked$
+    var regExpStr = Value.replace(/%\d+/g,'.+');
+    //TODO - save as a def file
+    defs.Control.push([regExpStr, className]); // 
+  });
+  //TODO incorporate scratch text as a new module
+  console.log(defs);
+  return defs;

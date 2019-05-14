@@ -1,9 +1,9 @@
 
-#JSON Information
+# JSON Information
 
 The important information from the JSON files holding each block's information will be given below. Hopefully it will be a helpful reference to save some effort in learning how to translate blocks in any future work.
 
-##JSON reference
+## JSON reference
 
 * Block ID- Random String of symbols and text ID for the block (ex. d)b5}!Q;Y=)Q7L:6@maQ)
   * fields: Have yet to be important to us.

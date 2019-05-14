@@ -21,20 +21,3 @@ The important information from the JSON files holding each block's information w
   * topLevel: Boolean. Is true if the block is the starting block or "hat" block
   * x: The X coordinates of the block.
   * y: The Y coordinates of the block.
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 

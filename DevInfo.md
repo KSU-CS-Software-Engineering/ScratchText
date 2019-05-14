@@ -11,7 +11,7 @@ Scratch Text is a project intended to add a text based aspect to [Scratch 3.0](h
 #### In the terminal:
 * npm install (might not need this step) 
 * npm start  
-* then open your localhost tab in a browser
+* then open your localhost 8601 tab in a browser
 
 ## General flow of our code
 In the GUI.jsx, we implemented code to show a new tab in the list of tabs.

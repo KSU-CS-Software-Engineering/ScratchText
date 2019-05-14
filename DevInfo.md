@@ -2,16 +2,16 @@
 Scratch Text is a project intended to add a text based aspect to [Scratch 3.0](https://scratch.mit.edu/). This extension will create a smoother transition for younger developers who are used to using Scratch and wish to learn how to program their projects in a text based format.
 
 ## Files we have code in: 
-gui.jsx (from inside components not containers), 
-icon--text.svg, 
-text-editor.jsx, 
-text-tab.jsx,
+* gui.jsx (from inside components not containers)
+* icon--text.svg
+* text-editor.jsx
+* text-tab.js
 
 ## How to run once installed
 #### In the terminal:
-npm install (might not need this step) -> 
-npm start -> 
-then open your localhost tab in a browser
+* npm install (might not need this step) 
+* npm start  
+* then open your localhost tab in a browser
 
 ## General flow of our code
 In the GUI.jsx, we implemented code to show a new tab in the list of tabs.
